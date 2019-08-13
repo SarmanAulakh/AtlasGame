@@ -15,8 +15,6 @@ public class Player : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
 
-        jump = new Vector3(0.0f, 2.0f, 0.0f);
-
 
         rb.velocity = new Vector2(speed, 0);
 
@@ -37,8 +35,6 @@ public class Player : MonoBehaviour
     void FixedUpdate()
     {
         rb.velocity = new Vector2(speed, rb.velocity.y);
-
-        Jump();  
 
     }
 
