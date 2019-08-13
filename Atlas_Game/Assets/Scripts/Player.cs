@@ -14,9 +14,12 @@ public class Player : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+<<<<<<< HEAD
 
         jump = new Vector3(0.0f, 2.0f, 0.0f);
 
+=======
+>>>>>>> parent of 8ed24b1... changed camera movement
     }
 
     void OnCollisionEnter2D(Collision2D other)
@@ -34,6 +37,10 @@ public class Player : MonoBehaviour
         //move horizonatally
         rb.velocity = new Vector2(speed, rb.velocity.y);
         Jump();  
+<<<<<<< HEAD
+=======
+    }
+>>>>>>> parent of 8ed24b1... changed camera movement
 
         //jump
         if (Input.anyKey && isGrounded)

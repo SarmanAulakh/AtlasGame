@@ -34,3 +34,4 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+Atlas_Game/Assets/Scripts/Player.cs
