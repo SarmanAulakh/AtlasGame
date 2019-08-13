@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public float speed = 4.0f;
-    private float jumpForce = 2.0f;
-
+    private float speed = 4.0f;
+    private Vector2 jump;
+    private float jumpForce = 2.5f;
     bool isGrounded;
     Rigidbody2D rb;
 
@@ -14,6 +14,7 @@ public class Player : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        jump = new Vector3(0.0f, 2.0f, 0.0f);
     }
 
     void OnCollisionEnter2D(Collision2D other)
@@ -21,24 +22,21 @@ public class Player : MonoBehaviour
         if(other.gameObject.CompareTag("ground"))
         {
             isGrounded = true;
-            rb.velocity = Vector2.zero;
         }
-        
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
+        //move horizonatally
         rb.velocity = new Vector2(speed, rb.velocity.y);
-        Jump();  
-    }
 
-    void Jump()
-    {
+        //jump
         if (Input.anyKey && isGrounded)
         {
-            rb.AddForce(new Vector2(rb.velocity.x, jumpForce));
+            rb.AddForce(jump * jumpForce, ForceMode2D.Impulse);
             isGrounded = false;
         }
     }
+    
 }
