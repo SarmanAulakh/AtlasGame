@@ -28,6 +28,7 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         rb.velocity = new Vector2(speed, rb.velocity.y);
 
         if (Input.anyKey && isGrounded)
