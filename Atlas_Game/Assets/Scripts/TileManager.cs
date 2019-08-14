@@ -13,7 +13,7 @@ public class TileManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        for (int i = 0; i < 50; i++)
+        for (int i = 0; i < 500; i++)
         {
             SpawnTile();
         }
@@ -31,7 +31,7 @@ public class TileManager : MonoBehaviour
         firstTile = (GameObject) Instantiate(rightTilePrefab, firstTile.transform.GetChild(0).transform.GetChild(0).position, Quaternion.identity);
 
         int hempPickup = Random.Range(0, 10); //range between 0 and 9
-        while(startNum > endNum)
+        if(startNum > endNum)
         {
             if (hempPickup == 0)
             {
