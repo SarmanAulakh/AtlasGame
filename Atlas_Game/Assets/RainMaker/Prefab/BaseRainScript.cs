@@ -54,7 +54,7 @@ namespace DigitalRuby.RainMaker
         public AudioClip WindSound;
 
         [Tooltip("Wind sound volume modifier, use this to lower your sound if it's too loud.")]
-        public float WindSoundVolumeModifier = 0.5f;
+        public float WindSoundVolumeModifier = 0.2f;
 
         [Tooltip("Wind zone that will affect and follow the rain")]
         public WindZone WindZone;
