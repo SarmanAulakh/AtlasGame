@@ -26,6 +26,14 @@ public class TileManager : MonoBehaviour
 
     public void SpawnTile()
     {
-       firstTile = (GameObject) Instantiate(rightTilePrefab, firstTile.transform.GetChild(0).transform.GetChild(0).position, Quaternion.identity);
+        firstTile = (GameObject) Instantiate(rightTilePrefab, firstTile.transform.GetChild(0).transform.GetChild(0).position, Quaternion.identity);
+
+       /* int hempPickup = Random.Range(0, 10); //range between 0 and 9
+
+        if(hempPickup == 0)
+        {
+            firstTile.transform.GetChild(1).gameObject.SetActive(true);
+        }
+        */
     }
 }
