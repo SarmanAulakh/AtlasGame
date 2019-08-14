@@ -7,6 +7,8 @@ public class TileManager : MonoBehaviour
 
     public GameObject rightTilePrefab;
     public GameObject firstTile;
+    private uint startNum = 0;
+    private uint endNum = 15;
 
     // Start is called before the first frame update
     void Start()
@@ -28,12 +30,22 @@ public class TileManager : MonoBehaviour
     {
         firstTile = (GameObject) Instantiate(rightTilePrefab, firstTile.transform.GetChild(0).transform.GetChild(0).position, Quaternion.identity);
 
-       /* int hempPickup = Random.Range(0, 10); //range between 0 and 9
-
-        if(hempPickup == 0)
+        int hempPickup = Random.Range(0, 10); //range between 0 and 9
+        while(startNum > endNum)
         {
-            firstTile.transform.GetChild(1).gameObject.SetActive(true);
+            if (hempPickup == 0)
+            {
+                firstTile.transform.GetChild(1).gameObject.SetActive(true);
+            }
         }
-        */
+        startNum++;
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Pickup")
+        {
+            other.gameObject.SetActive(false);
+        }
     }
 }
