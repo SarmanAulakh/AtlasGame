@@ -43,6 +43,6 @@ public class Main : MonoBehaviour
     public void GameOver()
     {
         Debug.Log("Game Over");
-        SceneManager.LoadScene("Menu");
+        SceneManager.LoadScene("GameOver");
     }
 }
