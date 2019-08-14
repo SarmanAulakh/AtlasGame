@@ -7,6 +7,7 @@ public class Spawner : MonoBehaviour
     // Reference to the Prefab. Drag a Prefab into this field in the Inspector.
     public GameObject lightning;
     public GameObject cloud;
+    public GameObject thunder;
     // This script will simply instantiate the Prefab when the game starts.
     void Start()
     {
@@ -17,7 +18,11 @@ public class Spawner : MonoBehaviour
             Instantiate(lightning, new Vector3(0 + (10*i), 0, 0), Quaternion.identity);
             Instantiate(lightning, new Vector3((float)0.5 + (10 * i), 0, 0), Quaternion.identity);
             Instantiate(lightning, new Vector3(1 + (10 * i), 0, 0), Quaternion.identity);
+
+
             Instantiate(cloud, new Vector3((float)6.2 + (10 * i), (float)3.4, 0), Quaternion.identity);
+
+            Instantiate(thunder, new Vector3((float)6.2 + (10 * i), (float)3.4, 0), Quaternion.identity);
 
         }
     }
