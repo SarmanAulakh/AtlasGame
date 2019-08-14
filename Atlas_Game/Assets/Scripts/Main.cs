@@ -1,9 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class Audio_test1 : MonoBehaviour
+public class Main : MonoBehaviour
 {
+    public static Main S;
     public Audio audioScript;
 
 
@@ -29,6 +31,18 @@ public class Audio_test1 : MonoBehaviour
             audioScript.PlaySound();
         }
 
+        if (Input.GetKeyDown("r"))
+        {
+            Debug.Log("Gm");
+            GameOver();
+        }
+            
 
+    }
+
+    public void GameOver()
+    {
+        Debug.Log("Game Over");
+        SceneManager.LoadScene("Menu");
     }
 }

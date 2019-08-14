@@ -26,6 +26,13 @@ public class Player : MonoBehaviour
         {
             isGrounded = true;
         }
+        if (other.gameObject.CompareTag("thunder"))
+        {
+            Debug.Log("you're fried");
+            Destroy(this.gameObject);
+            Main.S.GameOver();
+        }
+            
     }
 
     // Update is called once per frame
@@ -34,7 +41,7 @@ public class Player : MonoBehaviour
         
         rb.velocity = new Vector2(speed, rb.velocity.y);
 
-        if (Input.anyKey && isGrounded)
+        if (Input.GetKeyDown("space") && isGrounded)
         {
             jumpSound.Play();
             rb.AddForce(jump * jumpForce, ForceMode2D.Impulse);
