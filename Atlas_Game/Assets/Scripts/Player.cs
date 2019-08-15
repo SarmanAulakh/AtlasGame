@@ -41,7 +41,7 @@ public class Player : MonoBehaviour
         
         rb.velocity = new Vector2(speed, rb.velocity.y);
 
-        if (Input.GetKeyDown("space") && isGrounded)
+        if (Input.anyKey && isGrounded)
         {
             jumpSound.Play();
             rb.AddForce(jump * jumpForce, ForceMode2D.Impulse);
