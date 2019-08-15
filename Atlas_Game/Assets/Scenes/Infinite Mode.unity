@@ -372,7 +372,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a583ffc86a7c4394f869b132d5e7a92e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jump: {x: 0, y: 0, z: 0}
+  jumpSound: {fileID: 0}
 --- !u!61 &824606766
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -493,7 +493,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7647119261775518483, guid: 1dfbb5f4bc4f4fe47b17780ff982ccbc, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1dfbb5f4bc4f4fe47b17780ff982ccbc, type: 3}
 --- !u!1 &1214343817
 GameObject:
