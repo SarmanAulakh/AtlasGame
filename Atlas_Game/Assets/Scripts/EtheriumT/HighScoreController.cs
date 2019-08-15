@@ -9,36 +9,21 @@ using System.Numerics;
 using Nethereum.Hex.HexTypes;
 using Nethereum.JsonRpc.UnityClient;
 
-public class HighScoreController : MonoBehaviour, IMainGameEvents
+public class HighScoreController : MonoBehaviour
 {
-    [Header("Game Settings")]
-    [Tooltip("True means send eligible high scores to Ethereum network (can leave false when testing)")]
-    public bool submitHighScores = true;
-
-    [Header("Links to UI GameObjects")]
-    public Text uiTextHighScores;
     public Text uiTextEtherBalance;
-
-    [Header("Ethereum Settings")]
-    /// <summary>
-    /// The Ethereum network we will make calls to
-    /// </summary>
-    [Tooltip("The Ethereum network we will make calls to")]
+    
     public string networkUrl = "HTTP://127.0.0.1:7545";
-    public string playerEthereumAccount = "0x4E77642b6C5d7c8ECDb809c60123E911aD1a2267";
 
-    /// <summary>
-    /// Remember don't ever reveal your LIVE network private key, it is not safe to store that in game code. This is a test account so it is ok.
-    /// </summary>
-    [Tooltip("Remember don't ever reveal your LIVE network private key, it is not safe to store that in game code. This is a test account so it is ok.")]
-    public string playerEthereumAccountPK = "05be6ce86de17211a67d1fd83a94a5282a0f7e15d2e9887966161385787e82fc";
+    //players wallet
+    public string playerEthereumAccount = "0xF2dC4274c39f35ac21012Ed99ac6FbA84d348118";
+    public string playerEthereumAccountPK = "9a8b378afd4cc61febc4b726f34d50973b1ccec6aaf649ca83e9382f027d53dc";
 
-    private string contractOwnerAddress = "0x32A555F2328e85E489f9a5f03669DC820CE7EBe9";
-    private string contractOwnerPK = "517311d936323b28ca55379280d3b307d354f35ae35b214c6349e9828e809adc";   
+    //atlas wallet
+    private string contractOwnerAddress = "0xB61eA17cb0F01E547aFA2fFd8aB58141328701e5";
+    private string contractOwnerPK = "f488bcf58b72442ed024718962eef9001547881c4474dbba7030a0f892278798";  
+    
     private IEnumerator getAccountBalanceCoroutine;
-    private IEnumerator getHighScoresCoroutine;
-    private IEnumerator submitHighScoreCoroutine;
-    private int aliveTimeMilliSeconds;
 
     private static HighScoreController instance;
 
@@ -58,9 +43,7 @@ public class HighScoreController : MonoBehaviour, IMainGameEvents
     void Start()
     {
         // Prepare our coroutines            
-        getAccountBalanceCoroutine = GetAccountBalanceCoroutine(); 
-        getHighScoresCoroutine = GetHighScoresCoroutine(); 
-        submitHighScoreCoroutine = SubmitHighScoreCoroutine();
+        getAccountBalanceCoroutine = GetAccountBalanceCoroutine();
     }
 
     public void GetAccountBalance()
@@ -69,26 +52,11 @@ public class HighScoreController : MonoBehaviour, IMainGameEvents
         StopCoroutine(getAccountBalanceCoroutine);
         getAccountBalanceCoroutine = GetAccountBalanceCoroutine();
         StartCoroutine(getAccountBalanceCoroutine);
-    }
 
-    public void GetHighScores()
-    {
-        // Get high scores      
-        StopCoroutine(getHighScoresCoroutine);
-        getHighScoresCoroutine = GetHighScoresCoroutine();
-        StartCoroutine(getHighScoresCoroutine);
+        Debug.Log(getAccountBalanceCoroutine);
     }
-
-    public void SubmitHighScore()
-    {
-        StopCoroutine(submitHighScoreCoroutine);
-        submitHighScoreCoroutine = SubmitHighScoreCoroutine();
-        StartCoroutine(submitHighScoreCoroutine);
-    }
-
-    /// <summary>
-    /// Check Ether balance of the player account
-    /// </summary>
+    
+    // Check Ether balance of the player account
     public IEnumerator GetAccountBalanceCoroutine()
     {
         var getBalanceRequest = new EthGetBalanceUnityRequest(networkUrl);           // 1
@@ -108,24 +76,6 @@ public class HighScoreController : MonoBehaviour, IMainGameEvents
         }
     }
 
-
-    /// <summary>
-    /// Get high scores
-    /// </summary>
-    public IEnumerator GetHighScoresCoroutine()
-    {
-        yield return null;
-    }
-
-    private string PrettifyScore(int score)
-    {
-        float scoreFloat = 0f;
-        string scoreString;
-        scoreFloat = (float)score / 1000f;
-        scoreString = scoreFloat.ToString("n3");
-        return scoreString.PadLeft(8, ' ');
-    }
-
     private string PrettifyAddress(string addr)
     {
         if (addr.ToLowerInvariant() == playerEthereumAccount.ToLowerInvariant())
@@ -140,28 +90,6 @@ public class HighScoreController : MonoBehaviour, IMainGameEvents
 
     public void OnRefreshButtonPressed()
     {
-        GetHighScores();
         GetAccountBalance();
     }
-
-    /// <summary>
-    /// Submit a high score
-    /// </summary>   
-    public IEnumerator SubmitHighScoreCoroutine()
-    {
-        yield return null;
-    }
-
-    void IMainGameEvents.OnGameOver(float aliveTimeSeconds)
-    {
-        if (submitHighScores)
-        {
-            // Store the new high score
-            aliveTimeMilliSeconds = (int)(aliveTimeSeconds * 1000f);
-            SubmitHighScore();
-        }
-    }
-
-    // have to implement for interface, but dont care about it for now
-    void IMainGameEvents.OnGameStarted() { }
 }
