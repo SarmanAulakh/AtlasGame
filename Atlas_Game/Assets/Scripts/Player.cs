@@ -1,11 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
     static public Player S;
+    public Text EcoPointValue;
+    private uint EcoPoints = 0;
 
     private float speed = 4.0f;
     private Vector3 jump;
@@ -67,6 +70,8 @@ public class Player : MonoBehaviour
         if (col.gameObject.tag == "coin")
         {
             col.gameObject.SetActive(false);
+            EcoPoints++;
+            EcoPointValue.text = EcoPoints.ToString();
         }
         
     }
