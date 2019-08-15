@@ -694,6 +694,7 @@ GameObject:
   - component: {fileID: 1600394908}
   - component: {fileID: 1600394907}
   - component: {fileID: 1600394906}
+  - component: {fileID: 1600394909}
   m_Layer: 5
   m_Name: PlayAgainButton
   m_TagString: Untagged
@@ -761,8 +762,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1877715630}
-        m_MethodName: PlayGame
+      - m_Target: {fileID: 1600394909}
+        m_MethodName: Restart
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -811,6 +812,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1600394904}
   m_CullTransparentMesh: 0
+--- !u!114 &1600394909
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1600394904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bda5742ebe46dc240803a26c9f9cd96c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1659682377
 GameObject:
   m_ObjectHideFlags: 0

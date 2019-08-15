@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -12,6 +13,10 @@ public class Player : MonoBehaviour
     bool isGrounded;
     Rigidbody2D rb;
     public AudioSource jumpSound;
+
+    public Main sn;
+ 
+    
 
     // Start is called before the first frame update
     void Start()
@@ -30,7 +35,12 @@ public class Player : MonoBehaviour
         {
             Debug.Log("you're fried");
             Destroy(this.gameObject);
-            Main.S.GameOver();
+            sn.GameOver();
+        }
+
+        if (other.gameObject.CompareTag("coin"))
+        {
+            sn.YouWin();
         }
             
     }

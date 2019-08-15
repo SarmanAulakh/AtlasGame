@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 377710633703057095}
   - component: {fileID: 377710633703057092}
   - component: {fileID: 377710633703057089}
-  - component: {fileID: 377710633703057094}
+  - component: {fileID: 6324312737298413919}
+  - component: {fileID: 2989641031005697376}
   m_Layer: 0
   m_Name: ThunderPrefab
   m_TagString: thunder
@@ -107,7 +108,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.5823574, y: 1.6127176}
   m_EdgeRadius: 0
---- !u!50 &377710633703057094
+--- !u!114 &6324312737298413919
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 377710633703057093}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58370161151290a44b64a0eb835d55da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!50 &2989641031005697376
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
@@ -122,7 +135,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 0.2
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1

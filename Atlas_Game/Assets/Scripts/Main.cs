@@ -45,4 +45,9 @@ public class Main : MonoBehaviour
         Debug.Log("Game Over");
         SceneManager.LoadScene("GameOver");
     }
+
+    public void YouWin()
+    {
+        SceneManager.LoadScene("Win");
+    }
 }
