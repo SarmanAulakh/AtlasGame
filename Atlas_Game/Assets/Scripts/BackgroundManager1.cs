@@ -14,13 +14,6 @@ public class BackgroundManager1 : MonoBehaviour
             SpawnBack();
         }
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void SpawnBack()
     {
         firstBackground = (GameObject)Instantiate(rightBackPrefab, firstBackground.transform.GetChild(0).transform.GetChild(0).position, Quaternion.identity);

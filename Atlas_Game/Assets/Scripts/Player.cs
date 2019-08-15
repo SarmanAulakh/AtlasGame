@@ -60,4 +60,15 @@ public class Player : MonoBehaviour
         }
     }
 
+    // When coin intersects the collider (player) when 'is trigger' checked, 
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        // checks to see if collision is with player
+        if (col.gameObject.tag == "coin")
+        {
+            col.gameObject.SetActive(false);
+        }
+        
+    }
+
 }

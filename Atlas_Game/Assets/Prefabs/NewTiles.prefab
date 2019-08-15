@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3427401687637451104}
   m_Layer: 0
   m_Name: hemp
-  m_TagString: hemp
+  m_TagString: coin
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

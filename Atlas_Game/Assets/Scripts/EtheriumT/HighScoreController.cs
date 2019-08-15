@@ -52,8 +52,7 @@ public class HighScoreController : MonoBehaviour
         StopCoroutine(getAccountBalanceCoroutine);
         getAccountBalanceCoroutine = GetAccountBalanceCoroutine();
         StartCoroutine(getAccountBalanceCoroutine);
-
-        Debug.Log(getAccountBalanceCoroutine);
+        
     }
     
     // Check Ether balance of the player account
