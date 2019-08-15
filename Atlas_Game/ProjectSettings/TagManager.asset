@@ -6,6 +6,7 @@ TagManager:
   tags:
   - ground
   - thunder
+  - coin
   layers:
   - Default
   - TransparentFX

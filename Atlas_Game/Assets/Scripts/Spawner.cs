@@ -15,14 +15,14 @@ public class Spawner : MonoBehaviour
 
         for(int i = 0; i < 5; i++)
         {
-            Instantiate(lightning, new Vector3(0 + (10*i), 0, 0), Quaternion.identity);
-            Instantiate(lightning, new Vector3((float)0.5 + (10 * i), 0, 0), Quaternion.identity);
-            Instantiate(lightning, new Vector3(1 + (10 * i), 0, 0), Quaternion.identity);
+            Instantiate(lightning, new Vector3(0 + (12*i), 0, 0), Quaternion.identity);
+            Instantiate(lightning, new Vector3((float)0.5 + (12 * i), 0, 0), Quaternion.identity);
+            Instantiate(lightning, new Vector3(1 + (12 * i), 0, 0), Quaternion.identity);
 
 
-            Instantiate(cloud, new Vector3((float)6.2 + (10 * i), (float)3.4, 0), Quaternion.identity);
+            Instantiate(cloud, new Vector3((float)6.2 + (12 * i), (float)3.4, 0), Quaternion.identity);
 
-            Instantiate(thunder, new Vector3((float)6.2 + (10 * i), (float)3.4, 0), Quaternion.identity);
+            Instantiate(thunder, new Vector3((float)6.2 + (12 * i), (float)3.4 + (5 * i), 0), Quaternion.identity);
 
         }
     }
