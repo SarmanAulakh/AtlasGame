@@ -30,12 +30,16 @@ public class TileManager : MonoBehaviour
     {
         firstTile = (GameObject) Instantiate(rightTilePrefab, firstTile.transform.GetChild(0).transform.GetChild(0).position, Quaternion.identity);
 
-        int hempPickup = Random.Range(0, 10); //range between 0 and 9
+        int hempPickup = Random.Range(0, 15); //range between 0 and 14
         if(startNum > endNum)
         {
             if (hempPickup == 0)
             {
-                firstTile.transform.GetChild(1).gameObject.SetActive(true);
+                firstTile.transform.GetChild(0).transform.GetChild(1).gameObject.SetActive(true);
+            }
+            else if(hempPickup == 1 || hempPickup == 5 || hempPickup == 10)
+            {
+                firstTile.transform.GetChild(0).transform.GetChild(2).gameObject.SetActive(true);
             }
         }
         startNum++;

@@ -73,6 +73,12 @@ public class Player : MonoBehaviour
             EcoPoints++;
             EcoPointValue.text = EcoPoints.ToString();
         }
+        else if (col.gameObject.tag == "saw")
+        {
+            col.gameObject.SetActive(false);
+            EcoPoints++;
+            EcoPointValue.text = EcoPoints.ToString();
+        }
         
     }
 
