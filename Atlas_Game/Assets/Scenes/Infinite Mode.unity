@@ -239,7 +239,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d86076d2c96335647aaa1d24484a6bc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 824606764}
+  player: {fileID: 1000013505763093}
 --- !u!1 &450385038
 GameObject:
   m_ObjectHideFlags: 0
@@ -399,6 +399,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uiTextEtherBalance: {fileID: 1996935746}
+  player: {fileID: 0}
   networkUrl: https://rinkeby.infura.io
   playerEthereumAccount: 0xF2dC4274c39f35ac21012Ed99ac6FbA84d348118
   playerEthereumAccountPK: 9a8b378afd4cc61febc4b726f34d50973b1ccec6aaf649ca83e9382f027d53dc
@@ -495,19 +496,13 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 552481374}
   m_CullTransparentMesh: 0
---- !u!1 &824606764 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1000013301305156, guid: 7ac6bdc2e4b5e47468b8b460ca863a5f,
-    type: 3}
-  m_PrefabInstance: {fileID: 1951422545}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &824606765
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 824606764}
+  m_GameObject: {fileID: 1000013505763093}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a583ffc86a7c4394f869b132d5e7a92e, type: 3}
@@ -522,7 +517,7 @@ BoxCollider2D:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 824606764}
+  m_GameObject: {fileID: 1000013505763093}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -549,7 +544,7 @@ Rigidbody2D:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 824606764}
+  m_GameObject: {fileID: 1000013505763093}
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
@@ -1766,3 +1761,9 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1996935744}
   m_CullTransparentMesh: 0
+--- !u!1 &1000013505763093 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1000013301305156, guid: 7ac6bdc2e4b5e47468b8b460ca863a5f,
+    type: 3}
+  m_PrefabInstance: {fileID: 1951422545}
+  m_PrefabAsset: {fileID: 0}

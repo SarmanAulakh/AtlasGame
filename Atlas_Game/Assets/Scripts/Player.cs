@@ -8,7 +8,7 @@ public class Player : MonoBehaviour
 {
     static public Player S;
     public Text EcoPointValue;
-    private uint EcoPoints = 0;
+    public uint EcoPoints = 0;
 
     private float speed = 4.0f;
     private Vector3 jump;
@@ -18,6 +18,7 @@ public class Player : MonoBehaviour
     public AudioSource jumpSound;
 
     public Main sn;
+    private HighScoreController hsc;
  
     
 
@@ -28,6 +29,7 @@ public class Player : MonoBehaviour
         jump = new Vector3(0.0f, 4.0f, 0.0f);
     }
 
+    //for story mode
     void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.CompareTag("ground"))
@@ -40,7 +42,7 @@ public class Player : MonoBehaviour
             Destroy(this.gameObject);
             sn.GameOver();
         }
-
+        
         if (other.gameObject.CompareTag("coin"))
         {
             sn.YouWin();
@@ -64,22 +66,24 @@ public class Player : MonoBehaviour
     }
 
     // When coin intersects the collider (player) when 'is trigger' checked, 
+    //for infinite mode
     void OnTriggerEnter2D(Collider2D col)
     {
         // checks to see if collision is with player
-        if (col.gameObject.tag == "coin")
+        if (col.gameObject.tag == "hemp")
         {
             col.gameObject.SetActive(false);
             EcoPoints++;
             EcoPointValue.text = EcoPoints.ToString();
+            hsc.TransferEther();
         }
         else if (col.gameObject.tag == "saw")
         {
-            col.gameObject.SetActive(false);
-            EcoPoints++;
-            EcoPointValue.text = EcoPoints.ToString();
+            Debug.Log("you're dead");
+            Destroy(this.gameObject);
+            sn.GameOver();
         }
-        
+
     }
 
 }
