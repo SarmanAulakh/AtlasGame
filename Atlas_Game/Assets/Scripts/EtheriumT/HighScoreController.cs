@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+
 using UnityEngine.UI;
 using System.Numerics;
 using Nethereum.Hex.HexTypes;
@@ -28,6 +29,10 @@ public class HighScoreController : MonoBehaviour
 
     private static HighScoreController instance;
 
+    public void run()
+    {
+        TransferEther();
+    }
     
     public IEnumerator TransferEther()
     {
@@ -54,9 +59,11 @@ public class HighScoreController : MonoBehaviour
         var balanceRequest = new EthGetBalanceUnityRequest(url);
         yield return balanceRequest.SendRequest(playerEthereumAccount, BlockParameter.CreateLatest());
 
+        Debug.Log(balanceRequest.ToString());
         uiTextEtherBalance.text = balanceRequest.ToString(); //not working to change the text
 
         Debug.Log("Balance of account:" + UnitConversion.Convert.FromWei(balanceRequest.Result.Value));
     }
+    
     
 }
