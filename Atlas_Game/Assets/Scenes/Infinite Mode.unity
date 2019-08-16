@@ -399,8 +399,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uiTextEtherBalance: {fileID: 1996935746}
-  player: {fileID: 0}
-  networkUrl: https://rinkeby.infura.io
+  url: http://localhost:7545
   playerEthereumAccount: 0xF2dC4274c39f35ac21012Ed99ac6FbA84d348118
   playerEthereumAccountPK: 9a8b378afd4cc61febc4b726f34d50973b1ccec6aaf649ca83e9382f027d53dc
 --- !u!4 &498045140
@@ -509,6 +508,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EcoPointValue: {fileID: 1002785572}
+  EcoPoints: 0
   jumpSound: {fileID: 1691908105}
   sn: {fileID: 0}
 --- !u!61 &824606766
@@ -1633,7 +1633,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 498045139}
-        m_MethodName: OnRefreshButtonPressed
+        m_MethodName: run
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

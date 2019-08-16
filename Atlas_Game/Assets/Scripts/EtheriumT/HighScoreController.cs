@@ -37,7 +37,7 @@ public class HighScoreController : MonoBehaviour
     public IEnumerator TransferEther()
     {
         var ethTransfer = new EthTransferUnityRequest(url, contractOwnerPK, contractOwnerAddress); //url, sender private key, sender address
-        yield return ethTransfer.TransferEther(playerEthereumAccount, 1.1m, 2); //reciever address
+        yield return ethTransfer.TransferEther(playerEthereumAccount, 1.0m, 40000); //reciever address
 
         if (ethTransfer.Exception != null)
         {
@@ -60,6 +60,7 @@ public class HighScoreController : MonoBehaviour
         yield return balanceRequest.SendRequest(playerEthereumAccount, BlockParameter.CreateLatest());
 
         Debug.Log(balanceRequest.ToString());
+
         uiTextEtherBalance.text = balanceRequest.ToString(); //not working to change the text
 
         Debug.Log("Balance of account:" + UnitConversion.Convert.FromWei(balanceRequest.Result.Value));

@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Win.unity
     guid: 76ffce079ae86884181e4085a5be6b2a
+  - enabled: 1
+    path: Assets/Scenes/Infinite Mode.unity
+    guid: ff811ac0ba2bdb440a7c6ecc42627a6c
   m_configObjects: {}
