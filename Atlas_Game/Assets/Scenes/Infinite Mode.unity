@@ -515,7 +515,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EcoPointValue: {fileID: 1002785572}
   jumpSound: {fileID: 1691908105}
-  sn: {fileID: 0}
+  sn: {fileID: 824606768}
 --- !u!61 &824606766
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -563,6 +563,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
+--- !u!114 &824606768
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 824606764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa8b52c0abdeec14a9689c00229b3466, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioScript: {fileID: 0}
 --- !u!1 &1002785570
 GameObject:
   m_ObjectHideFlags: 0
