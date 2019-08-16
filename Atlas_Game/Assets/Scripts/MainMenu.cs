@@ -7,7 +7,11 @@ public class MainMenu : MonoBehaviour
 {
     public void PlayGame()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene("Game");
+    }
+    public void PlayInfiniteGame()
+    {
+        SceneManager.LoadScene("Infinite Mode");
     }
 
     public void QuitGame()
