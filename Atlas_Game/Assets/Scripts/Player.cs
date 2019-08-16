@@ -75,9 +75,9 @@ public class Player : MonoBehaviour
         }
         else if (col.gameObject.tag == "saw")
         {
-            col.gameObject.SetActive(false);
-            EcoPoints++;
-            EcoPointValue.text = EcoPoints.ToString();
+            Debug.Log("you're fried");
+            Destroy(this.gameObject);
+            sn.GameOver();
         }
         
     }

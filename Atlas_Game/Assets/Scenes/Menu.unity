@@ -1908,9 +1908,8 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: Move player to avoid obstacles, and collect hemp points. Do this by pressing
-    the right/left arrow keys to move forward/backward, and the up/down arrow keys
-    to jump or duck.
+  m_text: Press space to jump. Avoid any obstacles that come in your way and collect
+    coins to gain eco points. Have fun and good luck!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
